@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+			  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+			  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+			  crossorigin="anonymous"></script>
+<script type="text/javascript" src="cookies.js"></script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Pagina 10</title>
+</head>
+<body>
+
+
+<h1>Resp</h1>
+<p id="pregunta"></p>
+<div class="grid-container3">
+  <div id="gris_1"></div>
+  <div id="gris_2"></div>
+  <div class="empty"></div>
+  <div id="gris_3"></div>
+  <div>Ans</div>
+
+  <div style="grid-column: 1 / span 2">1.2.4</div>
+  <div style="background-color: white"></div>
+  <div>0.1.3</div>
+  <div style="border-style: dotted;" id="niv_ansidead"></div>
+
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var grises = getCookie("grises").split(",");
+	var ansiedad = 0;
+	if( [1,2,4].includes(parseInt(grises[0])))
+		ansiedad +=1;
+	if( [1,2,4].includes(parseInt(grises[1])))
+		ansiedad +=1;
+	if( [0,1,3].includes(parseInt(grises[2])))
+		ansiedad +=1;
+	$("#gris_1").html(grises[0]);
+	$("#gris_2").html(grises[1]);
+	$("#gris_3").html(grises[2]);
+	$("#niv_ansidead").html( ansiedad+"/3");
+
+
+
+</script>

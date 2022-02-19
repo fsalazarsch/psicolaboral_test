@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+			  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+			  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+			  crossorigin="anonymous"></script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Pagina 5</title>
+</head>
+<body>
+
+
+<h1>COLORES</h1>
+<p id="pregunta"> Cual de estos colores es el que más le agrada</p>
+
+<div class="grid-container2">
+
+  <div class="empty square right" id="cell1"></div>
+  <div class="square" id="cell2"></div>
+  <div class="square" id="cell3"></div>
+  <div class="empty square left" id="cell4"></div>
+ 
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	
+
+	var opts=[];
+
+	function poner_opciones( val1, val2, color1, color2 ){
+		$("#cell1").html(val1);
+		$("#cell2").attr("data", val1);
+		$("#cell2").attr("style", "background-color:"+color1);
+		$("#cell3").attr("data", val2);
+		$("#cell3").attr("style", "background-color:"+color2);
+		$("#cell4").html(val2);
+	}
+
+	function ver_opts(){
+	if (opts.length == 0)
+		poner_opciones( "1", "4", "#2f4161", "#23abcf");
+	if (opts.length == 1)
+		poner_opciones( "2", "3", "#08565c", "#14398a");
+	if (opts.length == 2)
+		poner_opciones( "1", "2", "#2f4161", "#08565c");
+	if (opts.length == 3)
+		poner_opciones( "4", "3", "#23abcf", "#14398a");
+	if (opts.length == 4)
+		poner_opciones( "3", "1", "#14398a", "#2f4161");
+	if (opts.length == 5)
+		poner_opciones( "4", "2", "#23abcf", "#08565c");
+	}
+
+	ver_opts();
+	$(".square").click( function(){
+
+		var opc = parseInt($(this).attr("data"));
+		opts.push(opc); 
+		ver_opts();
+
+		if (opts.length == 6){
+			console.log(opts);
+			window.location.replace("./pagina6.html");
+			}
+	});
+</script>
