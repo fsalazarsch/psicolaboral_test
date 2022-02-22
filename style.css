@@ -8,6 +8,8 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 5px;
+  background-color: #2196F3;
+  padding: 5px;
 }
 
 .grid-container3 {
@@ -17,7 +19,23 @@
   background-color: #2196F3;
   padding: 5px;
 }
-.grid-container3 > div {
+
+.grid-container4 {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  gap: 5px;
+  background-color: #2196F3;
+  padding: 5px;
+}
+
+.grid-container5 {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+  gap: 5px;
+  background-color: #2196F3;
+  padding: 5px;
+}
+.grid > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   font-size: 30px;
