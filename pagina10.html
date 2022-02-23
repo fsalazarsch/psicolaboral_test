@@ -356,7 +356,7 @@
 
 </div>
 
-<canvas id="polar_chartjs"></canvas>
+<canvas id="myCanvas" width="600" height="370" style="border:1px solid #d3d3d3;">
 </body>
 </html>
 
@@ -590,51 +590,6 @@
 	//rejilla_json = rejilla_json.map(function(value,index) { return value[1]; });
 
 	//console.log(rejilla_json);
-
-
-
-var ctx = document.getElementById("polar_chartjs").getContext("2d");
-
-ctx.beginPath();
-ctx.arc(95, 50, 40, 0, Math.PI);
-ctx.stroke();
-
-
-
-
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(300,300,20,Math.PI,0);
-ctx.arc(300,300,40,Math.PI,0);
-ctx.arc(300,300,60,Math.PI,0);
-ctx.arc(300,300,80,Math.PI,0);
-ctx.arc(300,300,100,Math.PI,0);
-ctx.arc(300,300,120,Math.PI,0);
-ctx.arc(300,300,140,Math.PI,0);
-ctx.arc(300,300,160,Math.PI,0);
-ctx.arc(300,300,180,Math.PI,0);
-ctx.arc(300,300,200,Math.PI,0);
-ctx.arc(300,300,220,Math.PI,0);
-ctx.arc(300,300,240,Math.PI,0);
-ctx.arc(300,300,260,Math.PI,0);
-
-//ejes
-ctx.moveTo(300, 300);
-ctx.lineTo(300, 40);
-ctx.moveTo(300, 300);
-ctx.lineTo(116, 116);
-ctx.moveTo(300, 300);
-ctx.lineTo(485, 116);
-ctx.moveTo(500, 300);
-ctx.lineTo(560, 300);
-
-ctx.font = "12px Arial";
-ctx.fillText("12   11  10   9    8    7    6    5    4    3    2    1    0    1    2     3    4    5    6    7    8    9  10  11  12", 50, 315); 
-
-ctx.strokeRect(40, 325, 520, 20)
-
-
-ctx.stroke();
+	radar(5,8,4,7);
 
 </script>
