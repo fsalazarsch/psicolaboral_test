@@ -356,7 +356,12 @@
 
 </div>
 
-<canvas id="myCanvas" width="600" height="370" style="border:1px solid #d3d3d3;">
+<canvas id="myCanvas" width="600" height="370" style="border:1px solid #d3d3d3;"></canvas>
+
+<canvas id="myCanvas2" width="600" height="370" style="border:1px solid #d3d3d3;"></canvas>
+
+<canvas id="myChart" width="600" height="370" style="border:1px solid #d3d3d3;"></canvas>
+
 </body>
 </html>
 
@@ -493,25 +498,42 @@
 	}
 
 
-	if( sumas[0] < 3)
+	if( sumas[0] <= 3){
 		$("#sobre_bajo1").html("-1");
-	if( sumas[0] > 8)
+		$("#sobre_bajo1").attr("class" ,"cubo");
+	}
+	if( sumas[0] >= 8){
 		$("#sobre_bajo1").html("+1");
+		$("#sobre_bajo1").attr("class" ,"cubo");
+	}
 
-	if( sumas[1] < 3)
+	if( sumas[1] <= 3){
 		$("#sobre_bajo2").html("-2");
-	if( sumas[1] > 8)
+		$("#sobre_bajo2").attr("class" ,"cubo");
+
+	}
+	if( sumas[1] >= 8){
 		$("#sobre_bajo2").html("+2");
+		$("#sobre_bajo2").attr("class" ,"cubo");
+	}
 
-	if( sumas[2] < 5)
+	if( sumas[2] <= 5){
 		$("#sobre_bajo3").html("-3");
-	if( sumas[2] > 10)
+		$("#sobre_bajo3").attr("class" ,"cubo");
+	}
+	if( sumas[2] >= 10){
 		$("#sobre_bajo3").html("+3");
+		$("#sobre_bajo3").attr("class" ,"cubo");
+	}
 
-	if( sumas[3] < 3)
+	if( sumas[3] <= 3){
 		$("#sobre_bajo4").html("-4");
-	if( sumas[3] > 9)
+		$("#sobre_bajo4").attr("class" ,"cubo");
+	}
+	if( sumas[3] >= 9){
 		$("#sobre_bajo4").html("+4");
+		$("#sobre_bajo4").attr("class" ,"cubo");
+	}
 
 
 	$("#ind_intr").html(sumas[0]+sumas[1]); 
@@ -592,4 +614,54 @@
 	//console.log(rejilla_json);
 	radar(5,8,4,7);
 
+	cubo();
+
+
+
+
+const skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
+const down = (ctx, value) => ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
+// </block:segmentUtils>
+
+// <block:genericOptions:2>
+const genericOptions = {
+  fill: false,
+  interaction: {
+    intersect: false
+  },
+  radius: 0,
+};
+
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [" Constante","Variable","","Directivo","Receptivo", "","Integración", "Diferenciación"],
+    datasets: [{
+      label: 'Columna 1',
+      data: [55, 69, NaN, 68, 66, NaN, 67, 60],
+      borderColor: "cyan",
+      backgroundColor: ["blue", "red", "", "green", "blue" ,"", "blue","green"],
+      order: 1
+    },
+    {
+      label: 'Columna 2',
+      data: [55, 69, NaN, 68, 66, NaN, 67, 60],
+      borderColor: "magenta",
+      backgroundColor: ["green", "yellow", "", "red", "yellow" ,"", "red","yellow"],
+      order: 2
+    },
+    {
+      label: 'Lineas',
+      data: [65, 59, NaN, 48, 56, NaN, 57, 40],
+      borderColor: 'black',
+      type: 'line',
+      spanGaps: false,
+      order: 0
+    },
+
+    ]
+  },
+  options: genericOptions
+});
 </script>
