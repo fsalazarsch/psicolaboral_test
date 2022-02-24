@@ -38,6 +38,7 @@ function radar(azul, verde, amarillo, rojo){
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
   ctx.beginPath();
+  ctx.scale(0.75,0.75);
 
   ctx.fillStyle = 'blue';
   ctx.moveTo(300, 300);
@@ -166,6 +167,7 @@ function cubo(){
   var c = document.getElementById("myCanvas2");
   var ctx = c.getContext("2d");
   ctx.beginPath();
+  ctx.scale(0.75,0.75);
 
   //CUBO
   ctx.rect(220, 20, 200, 200);

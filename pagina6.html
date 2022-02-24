@@ -14,7 +14,7 @@
 <body>
 
 
-<h1>COLORES</h1>
+<h1>VERDES</h1>
 <p id="pregunta"> Cual de estos colores es el que más le agrada</p>
 
 <div class="grid-container2">
@@ -33,7 +33,8 @@
 <script type="text/javascript">
 	
 
-	var opts=[];
+	var opts=[0,0,0,0];
+	var counter =0;
 
 	function poner_opciones( val1, val2, color1, color2 ){
 		$("#cell1").html(val1);
@@ -45,17 +46,17 @@
 	}
 
 	function ver_opts(){
-	if (opts.length == 0)
+	if (counter == 0)
 		poner_opciones( "1", "4", "#607d2b", "#b3d358");
-	if (opts.length == 1)
+	if (counter == 1)
 		poner_opciones( "2", "3", "#03846d", "#028130");
-	if (opts.length == 2)
+	if (counter == 2)
 		poner_opciones( "1", "2", "#607d2b", "#03846d");
-	if (opts.length == 3)
+	if (counter == 3)
 		poner_opciones( "4", "3", "#b3d358", "#028130");
-	if (opts.length == 4)
+	if (counter == 4)
 		poner_opciones( "3", "1", "#028130", "#607d2b");
-	if (opts.length == 5)
+	if (counter == 5)
 		poner_opciones( "4", "2", "#b3d358", "#03846d");
 	}
 
@@ -63,11 +64,14 @@
 	$(".square").click( function(){
 
 		var opc = parseInt($(this).attr("data"));
-		opts.push(opc); 
+		opts[opc-1] += 1;
+		counter++;
 		ver_opts();
 
-		if (opts.length == 6){
+		if (counter == 6){
 			console.log(opts);
+			document.cookie = "verdes="+opts;
+
 			window.location.replace("./pagina7.html");
 			}
 	});

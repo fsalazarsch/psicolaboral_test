@@ -73,7 +73,8 @@
 		ver_opts();
 
 		if (opts.length == 4){
-			console.log(opts);
+			document.cookie = "figuras="+opts;
+
 			window.location.replace("./pagina4.html");
 			}
 	});

@@ -77,6 +77,13 @@
 		ver_opts();
 
 		if (opts.length == 7){
+			//ordenar segun criterio: cambiar el sexto por el septimo
+			opts.push( opts[5] );
+			for( var i = 0; i< 8; i++)
+				if (!opts.includes(i))
+					opts[5] = i;
+
+			document.cookie = "cores="+opts;
 			console.log(opts);
 			window.location.replace("./pagina3.html");
 			}

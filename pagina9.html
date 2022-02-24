@@ -71,20 +71,29 @@
 	
 
 	$(".square").click( function(){
+		var comb = undefined;
 		var opc = parseInt($(this).attr("data"));
 		if (!opts.includes(opc) && (opts.length < 7))
 			opts.push(opc); 
 		else
 			if (opts.length == 7)
-				opts.push(opc); 
-			
+				comb = opc;
 			else
 				alert("No pude seleccionar un color 2 veces")
 		ver_opts();
 
-		if (opts.length == 8){
-			console.log(opts);
+		if (comb != undefined){
+
+
+			opts.push( opts[5] );
+			for( var i = 0; i< 8; i++)
+				if (!opts.includes(i))
+					opts[5] = i;
+			
+			document.cookie = "colores="+opts;
+			document.cookie = "comb="+comb;
+
 			window.location.replace("./pagina10.html");
-			}
+		}
 	});
 </script>
