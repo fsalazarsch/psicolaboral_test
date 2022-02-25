@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="./js/jquery-3.6.0.slim.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Pagina 2</title>
+</head>
+<body>
+
+
+	<h1>COLORES</h1>
+	<p id="pregunta"></p>
+
+	<div class="grid-container2" style="background-color: white;">
+
+	<div class="empty square right">5</div>
+		<div class="square" data="5" style="background-color:#922161;"></div>
+		<div class="square" data="1" style="background-color:#192e59;"></div>
+		<div class="empty square left">1</div>
+
+		<div class="empty square right">0</div>
+		<div class="square" data="0" style="background-color:#6c716d;"></div>
+		<div class="square" data="3" style="background-color:#e5473b;"></div>
+		<div class="empty square left">3</div>
+
+		<div class="empty square right">4</div>
+		<div class="square" data="4" style="background-color:#fbe142;"></div>
+		<div class="square" data="7" style="background-color:#131b1e;"></div>
+		<div class="empty square left">7</div>
+		<div class="empty square right">6</div>
+		<div class="square" data="6" style="background-color:#8e4824;"></div>
+		<div class="square" data="2" style="background-color:#317578;"></div>
+		<div class="empty square left">2</div>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	var opts=[];
+	$("#pregunta").text("Cual de estos colores es el que más le agrada");
+	
+	function ver_opts(){
+		if (opts.length == 1)
+			$("#pregunta").text("Cual de estos colores es el segundo que más le agrada");
+		if (opts.length == 2)
+			$("#pregunta").text("Cual de estos colores es el tercero que más le agrada");
+		if (opts.length == 3)
+			$("#pregunta").text("Cual de estos colores es el cuarto que más le agrada");
+		if (opts.length == 4)
+			$("#pregunta").text("Cual de estos colores es el quinto que más le agrada");
+		if (opts.length == 5)
+			$("#pregunta").text("Cual de estos colores es el que menos le agrada");
+		if (opts.length == 6)
+			$("#pregunta").text("Cual de estos colores es el segundo que menos le agrada");
+	}
+	
+
+	$(".square").click( function(){
+		var opc = parseInt($(this).attr("data"));
+		if (!opts.includes(opc))
+			opts.push(opc); 
+		else
+			alert("No pude seleccionar un color 2 veces")
+		ver_opts();
+
+		if (opts.length == 7){
+			//ordenar segun criterio: cambiar el sexto por el septimo
+			opts.push( opts[5] );
+			for( var i = 0; i< 8; i++)
+				if (!opts.includes(i))
+					opts[5] = i;
+
+			document.cookie = "cores="+opts;
+			console.log(opts);
+			window.location.replace("./pagina3.html");
+			}
+	});
+</script>
