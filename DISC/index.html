@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous"></script>
+
+	<script src="./preguntas.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+</style>
+	<title>DISC</title>
+
+
+
+</head>
+<body class="grid-container2">
+	
+	<div class="grid-container" id="pregunta1"><div class="grid-item">1</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Entusiasta</div>
+	<div class="grid-item"><input type="radio" name="1_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="1_I" value="-I"></div>
+	<div class="grid-item">Rápido(a)</div>
+	<div class="grid-item"><input type="radio" name="1_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="1_D" value="-D"></div>
+	<div class="grid-item">Lógico(a)</div>
+	<div class="grid-item"><input type="radio" name="1_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="1_C" value="-C"></div>
+	<div class="grid-item">Apacible</div>
+	<div class="grid-item"><input type="radio" name="1_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="1_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta2"><div class="grid-item">2</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Cauteloso(a)</div>
+	<div class="grid-item"><input type="radio" name="2_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="2_C" value="-C"></div>
+	<div class="grid-item">Decidido(a)</div>
+	<div class="grid-item"><input type="radio" name="2_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="2_D" value="-D"></div>
+	<div class="grid-item">Receptivo(a)</div>
+	<div class="grid-item"><input type="radio" name="2_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="2_I" value="-I"></div>
+	<div class="grid-item">Bondadoso(a)</div>
+	<div class="grid-item"><input type="radio" name="2_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="2_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta3"><div class="grid-item">3</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Amigable</div>
+	<div class="grid-item"><input type="radio" name="3_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="3_I" value="-I"></div>
+	<div class="grid-item">Preciso(a)</div>
+	<div class="grid-item"><input type="radio" name="3_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="3_C" value="-C"></div>
+	<div class="grid-item">Franco(a)</div>
+	<div class="grid-item"><input type="radio" name="3_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="3_D" value="-D"></div>
+	<div class="grid-item">Tranquilo(a)</div>
+	<div class="grid-item"><input type="radio" name="3_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="3_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta4"><div class="grid-item">4</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Elocuente</div>
+	<div class="grid-item"><input type="radio" name="4_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="4_I" value="-I"></div>
+	<div class="grid-item">Controlado(a)</div>
+	<div class="grid-item"><input type="radio" name="4_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="4_C" value="-C"></div>
+	<div class="grid-item">Tolerante</div>
+	<div class="grid-item"><input type="radio" name="4_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="4_S" value="-S"></div>
+	<div class="grid-item">Decisivo(a)</div>
+	<div class="grid-item"><input type="radio" name="4_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="4_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta5"><div class="grid-item">5</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Atrevido(a)</div>
+	<div class="grid-item"><input type="radio" name="5_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="5_D" value="-D"></div>
+	<div class="grid-item">Concienzudo(a)</div>
+	<div class="grid-item"><input type="radio" name="5_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="5_C" value="-C"></div>
+	<div class="grid-item">Comunicativo(a)</div>
+	<div class="grid-item"><input type="radio" name="5_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="5_I" value="-I"></div>
+	<div class="grid-item">Moderado(a)</div>
+	<div class="grid-item"><input type="radio" name="5_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="5_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta6"><div class="grid-item">6</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Ameno(a)</div>
+	<div class="grid-item"><input type="radio" name="6_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="6_S" value="-S"></div>
+	<div class="grid-item">Ingenioso(a)</div>
+	<div class="grid-item"><input type="radio" name="6_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="6_I" value="-I"></div>
+	<div class="grid-item">Investigador(a)</div>
+	<div class="grid-item"><input type="radio" name="6_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="6_S" value="-S"></div>
+	<div class="grid-item">Acepta Riesgos</div>
+	<div class="grid-item"><input type="radio" name="6_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="6_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta7"><div class="grid-item">7</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Expresivo(a)</div>
+	<div class="grid-item"><input type="radio" name="7_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="7_I" value="-I"></div>
+	<div class="grid-item">Cuidadoso(a)</div>
+	<div class="grid-item"><input type="radio" name="7_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="7_C" value="-C"></div>
+	<div class="grid-item">Dominante</div>
+	<div class="grid-item"><input type="radio" name="7_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="7_D" value="-D"></div>
+	<div class="grid-item">Sensible</div>
+	<div class="grid-item"><input type="radio" name="7_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="7_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta8"><div class="grid-item">8</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Extrovertido(a)</div>
+	<div class="grid-item"><input type="radio" name="8_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="8_I" value="-I"></div>
+	<div class="grid-item">Precavido(a)</div>
+	<div class="grid-item"><input type="radio" name="8_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="8_C" value="-C"></div>
+	<div class="grid-item">Constante</div>
+	<div class="grid-item"><input type="radio" name="8_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="8_S" value="-S"></div>
+	<div class="grid-item">Impaciente</div>
+	<div class="grid-item"><input type="radio" name="8_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="8_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta9"><div class="grid-item">9</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Discreto(a)</div>
+	<div class="grid-item"><input type="radio" name="9_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="9_C" value="-C"></div>
+	<div class="grid-item">Complaciente</div>
+	<div class="grid-item"><input type="radio" name="9_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="9_S" value="-S"></div>
+	<div class="grid-item">Encantador(a)</div>
+	<div class="grid-item"><input type="radio" name="9_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="9_I" value="-I"></div>
+	<div class="grid-item">Insistente</div>
+	<div class="grid-item"><input type="radio" name="9_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="9_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta10"><div class="grid-item">10</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Valeroso(a)</div>
+	<div class="grid-item"><input type="radio" name="10_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="10_I" value="-I"></div>
+	<div class="grid-item">Anima a los demás</div>
+	<div class="grid-item"><input type="radio" name="10_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="10_D" value="-D"></div>
+	<div class="grid-item">Pacifico(a)</div>
+	<div class="grid-item"><input type="radio" name="10_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="10_S" value="-S"></div>
+	<div class="grid-item">Perfeccionista</div>
+	<div class="grid-item"><input type="radio" name="10_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="10_C" value="-C"></div>
+	</div>
+	<div class="grid-container" id="pregunta11"><div class="grid-item">11</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Reservado(a)</div>
+	<div class="grid-item"><input type="radio" name="11_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="11_C" value="-C"></div>
+	<div class="grid-item">Atento(a)</div>
+	<div class="grid-item"><input type="radio" name="11_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="11_S" value="-S"></div>
+	<div class="grid-item">Osado(a)</div>
+	<div class="grid-item"><input type="radio" name="11_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="11_D" value="-D"></div>
+	<div class="grid-item">Alegre</div>
+	<div class="grid-item"><input type="radio" name="11_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="11_I" value="-I"></div>
+	</div>
+	<div class="grid-container" id="pregunta12"><div class="grid-item">12</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Estimulante</div>
+	<div class="grid-item"><input type="radio" name="12_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="12_I" value="-I"></div>
+	<div class="grid-item">Gentil</div>
+	<div class="grid-item"><input type="radio" name="12_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="12_S" value="-S"></div>
+	<div class="grid-item">Perceptivo(a)</div>
+	<div class="grid-item"><input type="radio" name="12_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="12_C" value="-C"></div>
+	<div class="grid-item">Independiente</div>
+	<div class="grid-item"><input type="radio" name="12_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="12_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta13"><div class="grid-item">13</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Competitivo(a)</div>
+	<div class="grid-item"><input type="radio" name="13_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="13_D" value="-D"></div>
+	<div class="grid-item">Considerado(a)</div>
+	<div class="grid-item"><input type="radio" name="13_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="13_S" value="-S"></div>
+	<div class="grid-item">Alegre</div>
+	<div class="grid-item"><input type="radio" name="13_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="13_I" value="-I"></div>
+	<div class="grid-item">Sagaz</div>
+	<div class="grid-item"><input type="radio" name="13_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="13_C" value="-C"></div>
+	</div>
+	<div class="grid-container" id="pregunta14"><div class="grid-item">14</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Meticuloso(a)</div>
+	<div class="grid-item"><input type="radio" name="14_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="14_C" value="-C"></div>
+	<div class="grid-item">Obediente</div>
+	<div class="grid-item"><input type="radio" name="14_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="14_S" value="-S"></div>
+	<div class="grid-item">Ideas Firmes</div>
+	<div class="grid-item"><input type="radio" name="14_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="14_D" value="-D"></div>
+	<div class="grid-item">Alentador(a)</div>
+	<div class="grid-item"><input type="radio" name="14_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="14_I" value="-I"></div>
+	</div>
+	<div class="grid-container" id="pregunta15"><div class="grid-item">15</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Popular</div>
+	<div class="grid-item"><input type="radio" name="15_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="15_I" value="-I"></div>
+	<div class="grid-item">Reflexivo(a)</div>
+	<div class="grid-item"><input type="radio" name="15_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="15_C" value="-C"></div>
+	<div class="grid-item">Tenaz</div>
+	<div class="grid-item"><input type="radio" name="15_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="15_D" value="-D"></div>
+	<div class="grid-item">Calmado(a)</div>
+	<div class="grid-item"><input type="radio" name="15_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="15_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta16"><div class="grid-item">16</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Analítico(a)</div>
+	<div class="grid-item"><input type="radio" name="16_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="16_C" value="-C"></div>
+	<div class="grid-item">Audaz</div>
+	<div class="grid-item"><input type="radio" name="16_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="16_D" value="-D"></div>
+	<div class="grid-item">Leal</div>
+	<div class="grid-item"><input type="radio" name="16_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="16_S" value="-S"></div>
+	<div class="grid-item">Promotor(a)</div>
+	<div class="grid-item"><input type="radio" name="16_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="16_I" value="-I"></div>
+	</div>
+	<div class="grid-container" id="pregunta17"><div class="grid-item">17</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Sociable</div>
+	<div class="grid-item"><input type="radio" name="17_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="17_I" value="-I"></div>
+	<div class="grid-item">Paciente</div>
+	<div class="grid-item"><input type="radio" name="17_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="17_S" value="-S"></div>
+	<div class="grid-item">Autosuficiente</div>
+	<div class="grid-item"><input type="radio" name="17_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="17_D" value="-D"></div>
+	<div class="grid-item">Certero(a)</div>
+	<div class="grid-item"><input type="radio" name="17_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="17_C" value="-C"></div>
+	</div>
+	<div class="grid-container" id="pregunta18"><div class="grid-item">18</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Adaptable</div>
+	<div class="grid-item"><input type="radio" name="18_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="18_S" value="-S"></div>
+	<div class="grid-item">Resuelto(a)</div>
+	<div class="grid-item"><input type="radio" name="18_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="18_D" value="-D"></div>
+	<div class="grid-item">Prevenido(a)</div>
+	<div class="grid-item"><input type="radio" name="18_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="18_C" value="-C"></div>
+	<div class="grid-item">Vivaz</div>
+	<div class="grid-item"><input type="radio" name="18_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="18_I" value="-I"></div>
+	</div>
+	<div class="grid-container" id="pregunta19"><div class="grid-item">19</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Agresivo(a)</div>
+	<div class="grid-item"><input type="radio" name="19_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="19_D" value="-D"></div>
+	<div class="grid-item">Impetuoso(a)</div>
+	<div class="grid-item"><input type="radio" name="19_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="19_I" value="-I"></div>
+	<div class="grid-item">Amistoso(a)</div>
+	<div class="grid-item"><input type="radio" name="19_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="19_S" value="-S"></div>
+	<div class="grid-item">Discerniente</div>
+	<div class="grid-item"><input type="radio" name="19_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="19_C" value="-C"></div>
+	</div>
+	<div class="grid-container" id="pregunta20"><div class="grid-item">20</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">De trato Fácil</div>
+	<div class="grid-item"><input type="radio" name="20_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="20_I" value="-I"></div>
+	<div class="grid-item">Compasivo(a)</div>
+	<div class="grid-item"><input type="radio" name="20_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="20_S" value="-S"></div>
+	<div class="grid-item">Cauto(a)</div>
+	<div class="grid-item"><input type="radio" name="20_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="20_C" value="-C"></div>
+	<div class="grid-item">Habla Directo</div>
+	<div class="grid-item"><input type="radio" name="20_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="20_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta21"><div class="grid-item">21</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Evaluador(a)</div>
+	<div class="grid-item"><input type="radio" name="21_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="21_C" value="-C"></div>
+	<div class="grid-item">Generoso(a)</div>
+	<div class="grid-item"><input type="radio" name="21_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="21_S" value="-S"></div>
+	<div class="grid-item">Animado(a)</div>
+	<div class="grid-item"><input type="radio" name="21_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="21_I" value="-I"></div>
+	<div class="grid-item">Persistente</div>
+	<div class="grid-item"><input type="radio" name="21_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="21_D" value="-D"></div>
+	</div>
+	<div class="grid-container" id="pregunta22"><div class="grid-item">22</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Impulsivo(a)</div>
+	<div class="grid-item"><input type="radio" name="22_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="22_I" value="-I"></div>
+	<div class="grid-item">Cuida los Detalles</div>
+	<div class="grid-item"><input type="radio" name="22_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="22_C" value="-C"></div>
+	<div class="grid-item">Enérgico(a)</div>
+	<div class="grid-item"><input type="radio" name="22_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="22_D" value="-D"></div>
+	<div class="grid-item">Tranquilo(a)</div>
+	<div class="grid-item"><input type="radio" name="22_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="22_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta23"><div class="grid-item">23</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Sociable</div>
+	<div class="grid-item"><input type="radio" name="23_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="23_I" value="-I"></div>
+	<div class="grid-item">Sistemático(a)</div>
+	<div class="grid-item"><input type="radio" name="23_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="23_C" value="-C"></div>
+	<div class="grid-item">Vigoroso(a)</div>
+	<div class="grid-item"><input type="radio" name="23_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="23_D" value="-D"></div>
+	<div class="grid-item">Tolerante</div>
+	<div class="grid-item"><input type="radio" name="23_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="23_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta24"><div class="grid-item">24</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Cautivador(a)</div>
+	<div class="grid-item"><input type="radio" name="24_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="24_I" value="-I"></div>
+	<div class="grid-item">Contento(a)</div>
+	<div class="grid-item"><input type="radio" name="24_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="24_S" value="-S"></div>
+	<div class="grid-item">Exigente</div>
+	<div class="grid-item"><input type="radio" name="24_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="24_D" value="-D"></div>
+	<div class="grid-item">Apegado(a) a las normas</div>
+	<div class="grid-item"><input type="radio" name="24_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="24_C" value="-C"></div>
+	</div>
+	<div class="grid-container" id="pregunta25"><div class="grid-item">25</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Le agrada discutir</div>
+	<div class="grid-item"><input type="radio" name="25_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="25_D" value="-D"></div>
+	<div class="grid-item">Metódico(a)</div>
+	<div class="grid-item"><input type="radio" name="25_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="25_C" value="-C"></div>
+	<div class="grid-item">Comedido(a)</div>
+	<div class="grid-item"><input type="radio" name="25_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="25_S" value="-S"></div>
+	<div class="grid-item">Desenvuelto(a)</div>
+	<div class="grid-item"><input type="radio" name="25_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="25_I" value="-I"></div>
+	</div>
+	<div class="grid-container" id="pregunta26"><div class="grid-item">26</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Jovial</div>
+	<div class="grid-item"><input type="radio" name="26_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="26_I" value="-I"></div>
+	<div class="grid-item">Preciso(a)</div>
+	<div class="grid-item"><input type="radio" name="26_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="26_C" value="-C"></div>
+	<div class="grid-item">Directo(a)</div>
+	<div class="grid-item"><input type="radio" name="26_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="26_D" value="-D"></div>
+	<div class="grid-item">Ecuánime</div>
+	<div class="grid-item"><input type="radio" name="26_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="26_S" value="-S"></div>
+	</div>
+	<div class="grid-container" id="pregunta27"><div class="grid-item">27</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Inquieto(a)</div>
+	<div class="grid-item"><input type="radio" name="27_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="27_D" value="-D"></div>
+	<div class="grid-item">Amable</div>
+	<div class="grid-item"><input type="radio" name="27_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="27_S" value="-S"></div>
+	<div class="grid-item">Elocuente</div>
+	<div class="grid-item"><input type="radio" name="27_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="27_I" value="-I"></div>
+	<div class="grid-item">Cuidadoso(a)</div>
+	<div class="grid-item"><input type="radio" name="27_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="27_C" value="-C"></div>
+	</div>
+	<div class="grid-container" id="pregunta28"><div class="grid-item">28</div>
+	<div class="grid-item">MAS</div>
+	<div class="grid-item">MENOS</div>
+	<div class="grid-item">Prudente</div>
+	<div class="grid-item"><input type="radio" name="28_C" value="C"></div>
+	<div class="grid-item"><input type="radio" name="28_C" value="-C"></div>
+	<div class="grid-item">Pionero(a)</div>
+	<div class="grid-item"><input type="radio" name="28_D" value="D"></div>
+	<div class="grid-item"><input type="radio" name="28_D" value="-D"></div>
+	<div class="grid-item">Espontáneo(a)</div>
+	<div class="grid-item"><input type="radio" name="28_I" value="I"></div>
+	<div class="grid-item"><input type="radio" name="28_I" value="-I"></div>
+	<div class="grid-item">Colaborador</div>
+	<div class="grid-item"><input type="radio" name="28_S" value="S"></div>
+	<div class="grid-item"><input type="radio" name="28_S" value="-S"></div>
+	</div>
+
+
+
+<script>
+
+$('input:radio').change(
+    function(){
+        if ($(this).is(':checked') ) {
+        	var nombre =$(this).attr("name");
+        	var indice = nombre.substring(0, nombre.length - 1);
+            //console.log(nombre);
+            if( $(this).val()[0] != '-')
+	            $('input[name^="'+indice+'"]' ).each(function() {
+	            	if (( $(this).val()[0] != '-') && ( nombre !=$(this).attr("name"))){
+	            		this.checked = false;
+	            	}
+	            });
+        	else
+            	$('input[name^="'+indice+'"]' ).each(function() {
+	            	if (( $(this).val()[0] == '-') && ( nombre !=$(this).attr("name"))){
+	            		this.checked = false;
+	            	}
+	            });
+        }
+    });
+
+
+
+
+
+</script>
