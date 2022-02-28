@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script
-			  src="https://code.jquery.com/jquery-3.6.0.js"
-			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-			  crossorigin="anonymous"></script>
-
-	<script src="./preguntas.js"></script>
+	<script src="./js/jquery-3.6.0.slim.min.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
@@ -486,6 +481,7 @@
 	<div class="grid-item"><input type="radio" name="28_S" value="-S"></div>
 	</div>
 
+	<button id="btn">Aqui</button>
 
 
 <script>
@@ -512,6 +508,35 @@ $('input:radio').change(
     });
 
 
+	var disc = [0,0,0,0];
+
+	$("#btn").click( function(){
+		$('input').each(function() {
+	        if ( this.checked == true){
+	            console.log( $(this).val());
+	            if ($(this).val() == 'D')
+	            	disc[0] +=1;
+	            if ($(this).val() == '-D')
+	            	disc[0] -=1;
+	            if ($(this).val() == 'I')
+	            	disc[1] +=1;
+	            if ($(this).val() == '-I')
+	            	disc[1] -=1;
+	            if ($(this).val() == 'S')
+	            	disc[2] +=1;
+	            if ($(this).val() == '-S')
+	            	disc[2] -=1;
+	            if ($(this).val() == 'C')
+	            	disc[3] +=1;
+	            if ($(this).val() == '-C')
+	            	disc[3] -=1;
+	            }
+	        });
+
+		console.log(disc);
+		document.cookie = "disc="+disc;
+		window.location.replace("./pagina2.html");
+	});
 
 
 
