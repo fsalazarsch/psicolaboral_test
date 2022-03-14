@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="./js/jquery-3.6.0.slim.min.js"></script>
+	<script type="text/javascript" src="./js/cookies.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<title>Pagina 1</title>
+</head>
+<body>
+
+
+	<h1>Grises</h1>
+	<p id="pregunta"></p>
+	<div class="grid-container">
+  	<div class="square" data="3" style="background-color: #fffce9;"></div>
+	  <div class="empty square"></div>
+  	<div class="square" data="4"></div>
+  	<div class="empty square">3</div>
+  	<div class="square" data="0" style="background-color: #e4e1d2;"></div>
+	  <div class="empty square">4</div>
+  	<div class="square" data="2" style="background-color: #000"></div>
+  	<div class="empty square">0</div>
+  	<div class="square" data="1" style="background-color: #b6b4a8"></div> 
+  	<div class="empty square">2</div>
+  	<div class="empty square"></div>
+  	<div class="empty square">1</div> 
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	var opts=[];
+
+	$("#pregunta").text("Cual de estos colores es el que más le agrada");
+	
+	function ver_opts(){
+		if (opts.length == 1)
+			$("#pregunta").text("Cual de estos colores es el segundo que más le agrada");
+		if (opts.length == 2)
+			$("#pregunta").text("Cual de estos colores es que menos le agrada");
+	}
+
+
+	$(".square").click( function(){
+		var opc = parseInt($(this).attr("data"));
+		if (!opts.includes(opc))
+			opts.push(opc); 
+		else
+			alert("No pude seleccionar un color 2 veces")
+		ver_opts();
+
+		if (opts.length == 3){
+			document.cookie = "grises="+opts;
+			window.location.replace("./pagina2.html");
+		}
+	});
+</script>
